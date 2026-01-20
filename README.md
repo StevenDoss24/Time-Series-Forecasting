@@ -122,22 +122,30 @@ Dinal evaluation includes:
 - scaled CRPS (probabilistic accuracy)
 
 ## Results
+
 1) Baseline Models (Holdout MAE, averaged)
+
 | Metric | Naive | HistoricAverage | WindowAverage | SeasonalNaive |
 | ------ | ----: | --------------: | ------------: | ------------: |
 | MAE    | 6.108 |           5.228 |         5.012 |         4.614 |
 
+
 2) Baselines vs ARIMA Models (Holdout MAE on selected products)
+   
 | Metric | ARIMA | SARIMA |  Naive | HistoricAverage | WindowAverage | SeasonalNaive |
 | ------ | ----: | -----: | -----: | --------------: | ------------: | ------------: |
 | MAE    | 7.430 |  5.926 | 10.318 |           8.396 |         7.997 |         8.096 |
 
+
 3) Rolling Cross-Validation (MAE, averaged)
+   
 | Metric | SeasonalNaive | WindowAverage |  ARIMA | SARIMA |
 | ------ | ------------: | ------------: | -----: | -----: |
 | MAE    |        12.751 |        15.072 | 12.549 | 11.575 |
 
-4) Exogenous Price Model vs SeasonalNaive (Final Metrics)
+
+4) Exogenous Price Model vs SeasonalNaive (Final Metrics
+   
 | Metric      | SARIMA_exog_price | SeasonalNaive |
 | ----------- | ----------------: | ------------: |
 | MAE         |            11.572 |        12.751 |
@@ -147,6 +155,7 @@ Dinal evaluation includes:
 | sMAPE       |             0.248 |         0.298 |
 | MASE        |             1.186 |         1.325 |
 | Scaled CRPS |             0.199 |         0.229 |
+
 
 Takeaway: Adding unit price as an exogenous regressor produced the best overall performance, improving both point accuracy (MAE/RMSE) and probabilistic accuracy (scaled CRPS) versus the seasonal baseline.
 
